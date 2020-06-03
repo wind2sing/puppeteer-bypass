@@ -1,0 +1,14 @@
+{
+  "name": "puppeteer-bypass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wind2sing/puppeteer-bypass.git",
+  "author": "wind2sing <windsing.me@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^3.3.0",
+    "puppeteer-extra": "^3.1.9",
+    "puppeteer-extra-plugin-block-resources": "^2.2.4",
+    "puppeteer-extra-plugin-stealth": "^2.4.9"
+  }
+}
