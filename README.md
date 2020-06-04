@@ -8,11 +8,15 @@ This library is used to bypass cloudflare's anti-bot pages using `puppeteer`.
 npm install puppeteer-bypass
 ```
 
+A recent version of Chromium is downloaded by default. If you want to skip the download, see [puppeteer Environment Variables](https://github.com/puppeteer/puppeteer/blob/v3.3.0/docs/api.md#environment-variables).
+
 
 
 
 
 ## Usage
+
+### Quick Start
 
 ```javascript
 const { goto } = require("puppeteer-bypass");
@@ -47,7 +51,7 @@ Results:
 
 
 
-**Advanced Usage:**
+### Advanced Usage:
 
 ```javascript
 const { goto } = require("puppeteer-bypass");
@@ -65,7 +69,7 @@ goto(url, {
   
   //---- custom options
   cloudflareHandler: (page) => page.waitForSelector("#main-wrapper"), 
-  // default handler is page.waitForNavigation()
+  // default handler is calling page.waitForNavigation()
   // change to your custom handler for quicker bypassing
   
   // hook function before calling page.goto(url)
