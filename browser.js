@@ -34,23 +34,29 @@ const defaultLaunchOptions = {
  */
 
 /**
+ * @callback HookP
+ * @param {import('puppeteer-extra').PuppeteerExtra} puppeteer
+ */
+
+/**
  *
  * @param {Object} options
  * @param {import('puppeteer').LaunchOptions} options.launchOptions
  * @param {import('puppeteer').DirectNavigationOptions} options.gotoOptions
  * @param {boolean} [options.useStealthPlugin]
+ * @param {HookP} [options.beforeLaunchHook]
  */
 async function initBrowser({
   launchOptions = {},
   useStealthPlugin = true,
-  // useBlockPlugin = true,
-  // configForBlockPlugin = { blockedTypes: defaultBlockedTypes },
+  beforeLaunchHook = null,
 } = {}) {
   const puppeteer = addExtra(vanillaPuppeteer);
   const stealth = StealthPlugin();
   if (useStealthPlugin) puppeteer.use(stealth);
 
   Object.assign(launchOptions, defaultLaunchOptions);
+  if (typeof beforeLaunchHook === "function") beforeLaunchHook(puppeteer);
   const browser = await puppeteer.launch(launchOptions);
   return browser;
 }

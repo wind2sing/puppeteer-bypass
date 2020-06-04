@@ -30,6 +30,7 @@ const defaultcloudflareHandler = (page) => {
  * @param {boolean} [options.useStealthPlugin]
  * @param {string} [options.cloudflareMark]
  * @param {CFHandler} [options.cloudflareHandler]
+ * @param {import('./browser').HookP} [options.beforeLaunchHook]
  * @param {Hook} [options.beforeGotoHook]
  * @param {Hook} [options.afterGotoHook]
  * @param {import('puppeteer').Browser} [options.browser]
@@ -43,6 +44,7 @@ async function goto(
     useStealthPlugin,
     cloudflareMark = "cf-browser-verification",
     cloudflareHandler = defaultcloudflareHandler,
+    beforeLaunchHook,
     beforeGotoHook,
     afterGotoHook,
   } = {}
@@ -55,6 +57,7 @@ async function goto(
     browser = await initBrowser({
       launchOptions,
       useStealthPlugin,
+      beforeLaunchHook
     });
     toCloseBrowser = true;
   }
