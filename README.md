@@ -58,8 +58,6 @@ goto(url, {
   //---- default options
   launchOptions: { devtools: true }, // options for puppeteer.lauch()
   gotoOptions: { timeout: 30000, waitUntil: "domcontentloaded" }, // options for page.goto()
-  useBlockPlugin: true, // enabled by default
-  configForBlockPlugin:{blockedTypes:new Set(["image"])},
   useStealthPlugin: true, // enabled by default
   cloudflareMark: "cf-browser-verification", 
   // call cloudflareHandler() if response's body contains this mark.

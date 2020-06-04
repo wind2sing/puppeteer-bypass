@@ -326,14 +326,6 @@ pump@^3.0.0:
     end-of-stream "^1.1.0"
     once "^1.3.1"
 
-puppeteer-extra-plugin-block-resources@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-block-resources/-/puppeteer-extra-plugin-block-resources-2.2.4.tgz#7e644ad31d7a9eaf1e227d7e2b6413ad5d318a69"
-  integrity sha512-LzJBY64b86m1jIWTq6F7OIthLuSDJPd7sQfscBueapx1FvNSt9YsfyOSKTCNRueYeiXyKw4CjkbDYIdIfyEENQ==
-  dependencies:
-    debug "^4.1.1"
-    puppeteer-extra-plugin "^3.1.4"
-
 puppeteer-extra-plugin-stealth@^2.4.9:
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-stealth/-/puppeteer-extra-plugin-stealth-2.4.9.tgz#51ae7261bb135ba8fdd580bb90a8a4d6718c528c"

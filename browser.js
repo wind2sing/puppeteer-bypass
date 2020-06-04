@@ -1,6 +1,7 @@
-const puppeteer = require("puppeteer-extra").default;
+const vanillaPuppeteer = require("puppeteer");
+const { addExtra } = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-const BlockPlugin = require("puppeteer-extra-plugin-block-resources");
+
 const defaultBlockedTypes = new Set([
   // "document",
   "stylesheet",
@@ -37,19 +38,17 @@ const defaultLaunchOptions = {
  * @param {Object} options
  * @param {import('puppeteer').LaunchOptions} options.launchOptions
  * @param {import('puppeteer').DirectNavigationOptions} options.gotoOptions
- * @param {boolean} [options.useBlockPlugin]
  * @param {boolean} [options.useStealthPlugin]
- * @param {ConfigBlock} [options.configForBlockPlugin]
- * @param {ConfigUA} [options.configForUAPlugin]
  */
 async function initBrowser({
   launchOptions = {},
   useStealthPlugin = true,
-  useBlockPlugin = true,
-  configForBlockPlugin = { blockedTypes: defaultBlockedTypes },
+  // useBlockPlugin = true,
+  // configForBlockPlugin = { blockedTypes: defaultBlockedTypes },
 } = {}) {
-  if (useStealthPlugin) puppeteer.use(StealthPlugin());
-  if (useBlockPlugin) puppeteer.use(BlockPlugin(configForBlockPlugin));
+  const puppeteer = addExtra(vanillaPuppeteer);
+  const stealth = StealthPlugin();
+  if (useStealthPlugin) puppeteer.use(stealth);
 
   Object.assign(launchOptions, defaultLaunchOptions);
   const browser = await puppeteer.launch(launchOptions);
