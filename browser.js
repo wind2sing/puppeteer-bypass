@@ -2,21 +2,6 @@ const vanillaPuppeteer = require("puppeteer");
 const { addExtra } = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 
-const defaultBlockedTypes = new Set([
-  // "document",
-  "stylesheet",
-  "image",
-  "media",
-  "font",
-  // "script",
-  "texttrack",
-  // "xhr",
-  // "fetch",
-  "eventsource",
-  "websocket",
-  "manifest",
-  "other",
-]);
 const defaultLaunchOptions = {
   args: ["--no-sandbox", "--disable-setuid-sandbox"],
 };

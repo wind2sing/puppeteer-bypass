@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-bypass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/wind2sing/puppeteer-bypass",
   "homepage": "https://github.com/wind2sing/puppeteer-bypass",
@@ -15,7 +15,6 @@
     "puppeteer-extra-plugin-stealth": "^2.4.9"
   },
   "keywords": [
-    "cloudflare",
     "puppeteer",
     "bypass"
   ]

@@ -1,6 +1,6 @@
 # puppeteer-bypass
 
-This library is used to bypass cloudflare's anti-bot pages using `puppeteer`.
+This library is used to bypass anti-bot pages using `puppeteer`.
 
 ## Installation
 
@@ -31,8 +31,8 @@ Results:
 
 ```bash
 {
-	body: '<html>...',
- 	cookies: [
+  body: '<html>...',
+  cookies: [
     ...
     {
       name: '__cfduid',
