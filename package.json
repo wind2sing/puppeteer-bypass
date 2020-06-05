@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-bypass",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "repository": "https://github.com/wind2sing/puppeteer-bypass",
   "homepage": "https://github.com/wind2sing/puppeteer-bypass",
